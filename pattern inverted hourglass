@@ -1,0 +1,84 @@
+Take N as input. For a value of N=5, we wish to draw the following pattern :
+
+             5                   5 
+             5 4               4 5 
+             5 4 3           3 4 5 
+             5 4 3 2       2 3 4 5 
+             5 4 3 2 1   1 2 3 4 5 
+             5 4 3 2 1 0 1 2 3 4 5 
+             5 4 3 2 1   1 2 3 4 5 
+             5 4 3 2       2 3 4 5 
+             5 4 3           3 4 5 
+             5 4               4 5 
+             5                   5 
+Input Format
+Take N as input.
+
+Constraints
+Output Format
+Pattern should be printed with a space between every two values.
+
+Sample Input
+5
+Sample Output
+5                   5 
+5 4               4 5 
+5 4 3           3 4 5 
+5 4 3 2       2 3 4 5 
+5 4 3 2 1   1 2 3 4 5 
+5 4 3 2 1 0 1 2 3 4 5 
+5 4 3 2 1   1 2 3 4 5 
+5 4 3 2       2 3 4 5 
+5 4 3           3 4 5 
+5 4               4 5 
+5                   5 
+------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int N=sc.nextInt();
+        int row=1;
+        int nst=1;
+        int nsp=2*N-1;
+       
+        while (row<=2*N+1){
+           int count=N;
+            for (int cst=1; cst<=nst;cst++){
+                System.out.print(count+" ");
+                count--;
+                 
+            }
+           for (int csp=1; csp<=nsp; csp++){
+                System.out.print("  ");
+           
+            }
+             
+            int cst=1;
+            if(row==N+1){
+                cst=2;
+                count++;
+            }
+     
+           for (; cst<=nst;cst++){
+              
+                System.out.print(count+1+" ");
+                  count=count+1;
+                
+                
+            }
+             
+           if(row<=N){
+                 nst++;
+            nsp=nsp-2;
+           }
+           else{
+                 nst--;
+            nsp=nsp+2;
+           }
+            row++;
+          
+            System.out.println();
+        }
+    }
+}
