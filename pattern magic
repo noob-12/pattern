@@ -1,0 +1,42 @@
+https://s3.amazonaws.com/hr-challenge-images/22060/1465463925-b22d8d8dfe-ScreenShot2016-06-09at2.47.18pm.png
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+      Scanner sc=new Scanner(System.in);
+      int n=  sc.nextInt();
+      int row=1;
+      int nsp=-1;
+      int nst=n;
+      while(row<=2*n-1){
+            for(int cst=1; cst<=nst; cst=cst+1){
+            
+                   System.out.print("*");
+            }
+            
+          for(int csp=1; csp<=nsp; csp++){
+              System.out.print(" ");
+
+          }
+          int cst=1;
+          if(row==1 || row==2*n-1){
+              cst=2;
+          }
+          for(; cst<=nst; cst=cst+1){
+            
+                   System.out.print("*");
+          
+          }
+          if(row<n){
+         nsp=nsp+2;
+         nst=nst-1;
+          }
+          else{
+                nsp=nsp-2;
+         nst=nst+1;
+          }
+          System.out.println();
+         
+          row++;
+      }
+    }
+}
