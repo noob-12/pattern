@@ -1,0 +1,92 @@
+Take N as input. For a value of N=7, we wish to draw the following pattern :
+
+                            1 
+                        2 1   1 2 
+                    3 2 1       1 2 3 
+                4 3 2 1           1 2 3 4 
+                    3 2 1       1 2 3 
+                        2 1   1 2 
+                            1 
+Input Format
+Take N as input.
+
+Constraints
+N is odd number.
+
+Output Format
+Pattern should be printed with a space between every two values.
+
+Sample Input
+7
+Sample Output
+            1 
+        2 1   1 2 
+    3 2 1       1 2 3 
+4 3 2 1           1 2 3 4 
+    3 2 1       1 2 3 
+        2 1   1 2 
+            1 
+Explanation
+Catch the pattern and print it accordingly.
+------------------------------------------------------
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+      Scanner sc=new Scanner(System.in);
+      int n=  sc.nextInt();
+      int row=1;
+      int nsp=2*n-1;
+      int nst=1;
+      int nsp2=-2;
+      int count=row;
+     
+      while(row<=n){
+        
+          for(int csp=1; csp<nsp; csp++){
+              System.out.print(" ");
+          }
+          count=row;
+          if(row>n/2)
+          {
+              count=n-row+1;
+          }
+          for(int cst=1; cst<=nst; cst=cst+1){
+              
+              System.out.print(count+" ");
+             count--;
+          }
+           for(int csp=1;csp<=nsp2;csp++) {
+                System.out.print(" ");
+            }
+            
+            if(row==1 || row==n) {
+            
+            System.out.print("");
+            }
+            
+            else {
+                for(int cst=1;cst<=nst;cst++) {
+                    System.out.print(cst+" ");
+                }   
+            }
+            
+            System.out.println();
+            
+            if(row<=n/2) {
+                nsp=nsp-4;
+                nst++;
+                nsp2 = nsp2+4;
+            }
+            
+            else {
+                nst--;
+                nsp=nsp+4;
+                nsp2=nsp2-4;
+            }
+            
+            row++;
+        }
+        
+    }
+}
