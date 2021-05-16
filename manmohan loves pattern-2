@@ -1,0 +1,49 @@
+Help Manmohan to print pattern of a given number. See the output pattern for given input n = 5.
+
+Input Format
+Single integer N denoting number of lines of the pattern.
+
+Constraints
+N<=1000
+
+Output Format
+Pattern.
+
+Sample Input
+5
+Sample Output
+1
+11
+202
+3003
+40004
+Explanation
+If row number is n (>1), total character is n. First and last character is n-1 and rest are 0.
+-----------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int row=1;
+        int nst=1;
+        int count =1;
+        while (row<=n){
+            for (int cst=1; cst<=nst;cst++){
+                if(row==1){
+                    System.out.print(count);
+                }
+               else if(cst==1 || cst==nst )
+                System.out.print(count-1);
+                else{
+                      System.out.print(0);
+                }
+            }
+
+           count++;
+            row++;
+            nst++;
+            System.out.println();
+        }
+    }
+}
