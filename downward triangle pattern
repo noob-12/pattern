@@ -1,0 +1,45 @@
+Write a program to print given pattern by taking input N.
+
+Input Format
+The first line contains an integer N.
+
+Constraints
+Output Format
+Display the pattern as result.
+
+Sample Input
+6
+Sample Output
+* * * * * * 
+ * * * * * 
+  * * * * 
+   * * * 
+    * * 
+     * 
+---------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+      Scanner sc=new Scanner(System.in);
+      int n=  sc.nextInt();
+      int row=1;
+      int nsp=0;
+      int nst=n;
+      while(row<=n){
+          
+          for(int csp=1; csp<=nsp; csp++){
+              System.out.print(" ");
+
+          }
+          for(int cst=1; cst<=nst; cst=cst+1){
+              System.out.print("* ");
+          }
+         
+              nsp=nsp+1;
+             nst=nst-1;
+          System.out.println();
+         
+          row++;
+      }
+    }
+}
